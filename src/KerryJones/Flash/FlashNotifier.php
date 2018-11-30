@@ -154,6 +154,16 @@ class FlashNotifier
     }
 
     /**
+     * Add an "important" flash to the session.
+     *
+     * @return $this
+     */
+    public function deleteButton()
+    {
+        return $this->updateLastMessage(['delete-button' => true]);
+    }
+
+    /**
      * Clear all registered messages.
      *
      * @return $this
