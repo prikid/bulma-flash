@@ -160,7 +160,7 @@ class FlashNotifier
      */
     public function deleteButton()
     {
-        return $this->updateLastMessage(['delete-button' => true]);
+        return $this->updateLastMessage(['delete_button' => true]);
     }
 
     /**

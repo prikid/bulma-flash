@@ -33,6 +33,13 @@ class Message implements \ArrayAccess
     public $important = false;
 
     /**
+     * Whether the message should have a delete button.
+     *
+     * @var bool
+     */
+    public $delete_button = false;
+
+    /**
      * Whether the message is an overlay.
      *
      * @var bool

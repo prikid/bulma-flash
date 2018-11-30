@@ -10,7 +10,7 @@
                     is-{{ $message['level'] }}
                     {{ $message['important'] ? 'notification-important' : '' }}"
         >
-            @if ($message['delete-button'])
+            @if ($message['delete_button'])
                 <button class="delete"></button>
             @endif
 
