@@ -1,19 +1,22 @@
 # Easy Flash Messages for Your Laravel App
 
-This composer package offers a Twitter Bootstrap optimized flash messaging setup for your Laravel applications.
+This composer package offers a Bulma optimized flash messaging setup for your Laravel applications.
+
+Thank you to Laracasts for providing the base with Bootstrap:
+https://github.com/laracasts/flash
 
 ## Installation
 
 Begin by pulling in the package through Composer.
 
 ```bash
-composer require laracasts/flash
+composer require kerryjones/bulma-flash
 ```
 
-Next, as noted above, the default CSS classes for your flash message are optimized for Twitter Bootstrap. As such, either pull in the Bootstrap's CSS within your HTML or layout file, or write your own CSS based on these classes.
+Next, as noted above, the default CSS classes for your flash message are optimized for Bulma. As such, either pull in the Bulma's CSS within your HTML or layout file, or write your own CSS based on these classes.
 
 ```html
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
 ```
 
 ## Usage
@@ -53,7 +56,7 @@ With this message flashed to the session, you may now display it in your view(s)
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
 </head>
 <body>
 
@@ -63,12 +66,11 @@ With this message flashed to the session, you may now display it in your view(s)
     <p>Welcome to my website...</p>
 </div>
 
-<!-- If using flash()->important() or flash()->overlay(), you'll need to pull in the JS for Twitter Bootstrap. -->
+<!-- If using flash()->important() or flash()->overlay(), you'll need to pull in the JS for Modal. -->
 <script src="//code.jquery.com/jquery.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <script>
-    $('#flash-overlay-modal').modal();
+    $('#flash-overlay-modal').addClass('is-active');
 </script>
 
 </body>
@@ -78,7 +80,7 @@ With this message flashed to the session, you may now display it in your view(s)
 If you need to modify the flash message partials, you can run:
 
 ```bash
-php artisan vendor:publish --provider="Laracasts\Flash\FlashServiceProvider"
+php artisan vendor:publish --provider="KerryJones\Flash\FlashServiceProvider"
 ```
 
 The two package views will now be located in the `resources/views/vendor/flash/` directory.
@@ -89,25 +91,17 @@ flash('Welcome Aboard!');
 return home();
 ```
 
-![https://dl.dropboxusercontent.com/u/774859/GitHub-Repos/flash/message.png](https://dl.dropboxusercontent.com/u/774859/GitHub-Repos/flash/message.png)
-
 ```php
 flash('Sorry! Please try again.')->error();
 
 return home();
 ```
 
-![https://dl.dropboxusercontent.com/u/774859/GitHub-Repos/flash/error.png](https://dl.dropboxusercontent.com/u/774859/GitHub-Repos/flash/error.png)
-
 ```php
-flash()->overlay('You are now a Laracasts member!', 'Yay');
+flash()->overlay('You are now a member!', 'Yay');
 
 return home();
 ```
-
-![https://dl.dropboxusercontent.com/u/774859/GitHub-Repos/flash/overlay.png](https://dl.dropboxusercontent.com/u/774859/GitHub-Repos/flash/overlay.png)
-
-> [Learn exactly how to build this very package on Laracasts!](https://laracasts.com/lessons/flexible-flash-messages)
 
 ## Hiding Flash Messages
 
@@ -115,11 +109,11 @@ A common desire is to display a flash message for a few seconds, and then hide i
 
 ```html
 <script>
-$('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+$('div.notification').not('.notification-important').delay(3000).removeClass('is-active');
 </script>
 ```
 
-This will find any alerts - excluding the important ones, which should remain until manually closed by the user - wait three seconds, and then fade them out.
+This will find any notifications - excluding the important ones, which should remain until manually closed by the user - wait three seconds, and then fade them out.
 
 ## Multiple Flash Messages
 

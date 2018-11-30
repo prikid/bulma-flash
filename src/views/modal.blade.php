@@ -1,19 +1,15 @@
-<div id="flash-overlay-modal" class="modal fade {{ $modalClass or '' }}">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-
-                <h4 class="modal-title">{{ $title }}</h4>
-            </div>
-
-            <div class="modal-body">
-                <p>{!! $body !!}</p>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
+<div id="flash-overlay-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">{{ $title }}</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <p>{!! $body !!}</p>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button">Close</button>
+        </footer>
     </div>
 </div>

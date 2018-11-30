@@ -1,11 +1,11 @@
 {
-    "name": "laracasts/flash",
-    "description": "Easy flash notifications",
+    "name": "KerryJones/flash",
+    "description": "Easy Laravel/Bulma flash notifications",
     "license": "MIT",
     "authors": [
         {
-            "name": "Jeffrey Way",
-            "email": "jeffrey@laracasts.com"
+            "name": "Kerry Jones",
+            "email": "kerryjones21@gmail.com"
         }
     ],
     "require": {
@@ -18,20 +18,20 @@
     },
     "autoload": {
         "psr-0": {
-            "Laracasts\\Flash": "src/"
+            "KerryJones\\Flash": "src/"
         },
         "files": [
-            "src/Laracasts/Flash/functions.php"
+            "src/KerryJones/Flash/functions.php"
         ]
     },
     "minimum-stability": "stable",
     "extra": {
         "laravel": {
             "providers": [
-                "Laracasts\\Flash\\FlashServiceProvider"
+                "KerryJones\\Flash\\FlashServiceProvider"
             ],
             "aliases": {
-                "Flash": "Laracasts\\Flash\\Flash"
+                "Flash": "KerryJones\\Flash\\Flash"
             }
         }
     }

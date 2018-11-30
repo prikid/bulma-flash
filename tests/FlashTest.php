@@ -1,6 +1,6 @@
 <?php
 
-use Laracasts\Flash\FlashNotifier;
+use KerryJones\Flash\FlashNotifier;
 use PHPUnit\Framework\TestCase;
 
 class FlashTest extends TestCase
@@ -11,7 +11,7 @@ class FlashTest extends TestCase
 
     public function setUp()
     {
-        $this->session = Mockery::spy('Laracasts\Flash\SessionStore');
+        $this->session = Mockery::spy('KerryJones\Flash\SessionStore');
 
         $this->flash = new FlashNotifier($this->session);
     }
