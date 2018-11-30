@@ -39,6 +39,17 @@ class FlashNotifier
      * @param  string|null $message
      * @return $this
      */
+    public function primary($message = null)
+    {
+        return $this->message($message, 'primary');
+    }
+
+    /**
+     * Flash an information message.
+     *
+     * @param  string|null $message
+     * @return $this
+     */
     public function info($message = null)
     {
         return $this->message($message, 'info');

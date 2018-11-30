@@ -7,7 +7,7 @@
         ])
     @else
         <div class="notification
-                    alert-{{ $message['level'] }}
+                    is-{{ $message['level'] }}
                     {{ $message['important'] ? 'notification-important' : '' }}"
         >
             @if ($message['important'])
